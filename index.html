@@ -15,9 +15,9 @@
     html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block;object-fit:cover;height:100%}
     .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:center;z-index:100;background:var(--bg);}
+    header{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:center;z-index:100;background:#ffd697;}
     .brand{color:var(--fg);font-weight:700;letter-spacing:.2em;font-size:14px}
     .spacer{height:64px}
 
@@ -36,8 +36,7 @@
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:760px){.grid{grid-template-columns:repeat(2,1fr);gap:20px}}
     .card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden}
-    .card figure{margin:0;position:relative}
-    .card .placeholder{width:100%;height:52vh;min-height:300px;background:#ddd;display:flex;align-items:center;justify-content:center;color:#666;font-size:14px}
+    .card figure{margin:0;position:relative;height:52vh;min-height:300px}
     .badge{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.8);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em}
     .tag{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.55);color:#fff;padding:4px 10px;border-radius:999px;font-size:12px}
     figcaption{color:var(--muted);font-size:12px;padding:10px 14px 0}
@@ -53,6 +52,10 @@
     .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
     .reveal.show{opacity:1;transform:translateY(0)}
     @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+    /* overrides */
+    header{background:#ffd697}
+    .spacer{background:#ffd697}
+    .card img.card-img{width:100%;height:52vh;min-height:300px;object-fit:cover;display:block}
   </style>
 </head>
 <body>
@@ -94,23 +97,74 @@
         <div class="grid">
           <article class="card reveal" aria-label="Ficción">
             <figure>
-              <div class="placeholder">Imagen (conceptual)</div>
+              <img class="card-img" src="images/guacyan_square.png" alt="Ficción – imagen" loading="lazy" />
               <div class="badge">En construcción</div>
             </figure>
             <div class="body">
               <div class="title">Ficción</div>
-              <p class="text">Cortometrajes argometrajes y series con enfoque local y resonancia internacional.</p>
+              <p class="text">Largometrajes y series con enfoque local y resonancia internacional.</p>
             </div>
           </article>
 
           <article class="card reveal" aria-label="Documental">
             <figure>
-              <div class="placeholder">Imagen (conceptual)</div>
+              <img class="card-img" src="images/enby_square.png" alt="Documental – imagen" loading="lazy" />
               <div class="badge">En construcción</div>
             </figure>
             <div class="body">
               <div class="title">Documental</div>
               <p class="text">No ficción personal sobre memoria, territorio y descentralización cultural.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" aria-label="Cortometrajes">
+            <figure>
+              <img src="images/tawsy_square.png" alt="Cortometrajes" loading="lazy" />
+              <div class="badge">En construcción</div>
+            </figure>
+            <div class="body">
+              <div class="title">Cortometrajes</div>
+              <p class="text">Piezas breves para explorar personajes, estilos y riesgos narrativos.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" aria-label="Masterclasses, Talleres y Workshops">
+            <figure>
+              <div class="placeholder">Imagen próximamente</div>
+              <div class="badge">En construcción</div>
+            </figure>
+            <div class="body">
+              <div class="title">Masterclasses, Talleres y Workshops</div>
+              <p class="text">Programas de formación y acompañamiento creativo para comunidades y equipos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuevas líneas de trabajo -->
+    <section aria-label="Más líneas de trabajo">
+      <div class="container">
+        <div class="grid">
+          <article class="card reveal" aria-label="Cortometrajes">
+            <figure>
+              <div class="placeholder">Imagen (Cortometrajes)</div>
+              <div class="badge">En construcción</div>
+            </figure>
+            <div class="body">
+              <div class="title">Cortometrajes</div>
+              <p class="text">Piezas breves para explorar personajes, estilos y riesgos narrativos.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" aria-label="Formación">
+            <figure>
+              <div class="placeholder">Imagen (Formación)</div>
+              <div class="badge">En construcción</div>
+            </figure>
+            <div class="body">
+              <div class="title">Masterclasses, Talleres y Workshops</div>
+              <p class="text">Programas de formación y acompañamiento creativo para comunidades y equipos.</p>
             </div>
           </article>
         </div>
